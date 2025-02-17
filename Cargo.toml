@@ -1,14 +1,7 @@
 [package]
-name = "lib-web"
+name = "webapp-framework"
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
-# -- App Libs
-lib-utils = { path = "../../libs/lib-utils"}
-lib-rpc-core = { path = "../../libs/lib-rpc-core"}
-lib-auth = { path = "../../libs/lib-auth"}
-lib-core = { path = "../../libs/lib-core"}
 
 # -- Async
 tokio = { version = "1", features = ["full"] }
