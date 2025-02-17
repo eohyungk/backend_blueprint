@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Styles -->
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #2d3748; stroke-width: 2; }
+      .arrow { stroke: #4a5568; stroke-width: 2; marker-end: url(#arrowhead); }
+      .text { font-family: -apple-system, system-ui, sans-serif; font-size: 14px; fill: #2d3748; }
+      .small-text { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #718096; }
+      .highlight { fill: #ebf8ff; }
+      .error-path { stroke: #e53e3e; stroke-width: 2; marker-end: url(#arrowhead-error); }
+    </style>
+    
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568"/>
+    </marker>
+    <marker id="arrowhead-error" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e53e3e"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="text" style="font-size: 20px; font-weight: bold">Authentication Flow</text>
+  
+  <!-- Client -->
+  <rect x="50" y="100" width="120" height="60" rx="4" class="box"/>
+  <text x="110" y="140" text-anchor="middle" class="text">Client</text>
+  
+  <!-- Auth Middleware -->
+  <rect x="340" y="100" width="120" height="60" rx="4" class="box highlight"/>
+  <text x="400" y="140" text-anchor="middle" class="text">Auth Middleware</text>
+  
+  <!-- Token Validator -->
+  <rect x="340" y="250" width="120" height="60" rx="4" class="box"/>
+  <text x="400" y="290" text-anchor="middle" class="text">Token Validator</text>
+  
+  <!-- User Store -->
+  <rect x="340" y="400" width="120" height="60" rx="4" class="box"/>
+  <text x="400" y="440" text-anchor="middle" class="text">User Store</text>
+  
+  <!-- Protected Resource -->
+  <rect x="630" y="100" width="120" height="60" rx="4" class="box"/>
+  <text x="690" y="140" text-anchor="middle" class="text">Protected Resource</text>
+  
+  <!-- Flow Arrows -->
+  <!-- Request flow -->
+  <line x1="170" y1="130" x2="330" y2="130" class="arrow"/>
+  <text x="250" y="120" class="small-text">1. Request with Token</text>
+  
+  <!-- Validation flow -->
+  <line x1="400" y1="160" x2="400" y2="240" class="arrow"/>
+  <text x="420" y="200" class="small-text">2. Validate Token</text>
+  
+  <!-- User lookup -->
+  <line x1="400" y1="310" x2="400" y2="390" class="arrow"/>
+  <text x="420" y="350" class="small-text">3. Lookup User</text>
+  
+  <!-- Success path -->
+  <path d="M 460 130 L 620 130" class="arrow"/>
+  <text x="540" y="120" class="small-text">4. Forward Request</text>
+  
+  <!-- Error path -->
+  <path d="M 340 280 L 110 280 L 110 170" class="error-path"/>
+  <text x="200" y="270" class="small-text" fill="#e53e3e">Error: Invalid Token</text>
+</svg>
