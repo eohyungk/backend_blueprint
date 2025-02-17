@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Styles -->
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #2d3748; stroke-width: 2; }
+      .module { fill: #f7fafc; stroke: #4299e1; stroke-width: 2; }
+      .arrow { stroke: #4a5568; stroke-width: 2; marker-end: url(#arrowhead); }
+      .text { font-family: -apple-system, system-ui, sans-serif; font-size: 14px; fill: #2d3748; }
+      .small-text { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #718096; }
+      .module-text { font-family: monospace; font-size: 12px; fill: #2b6cb0; }
+    </style>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="text" style="font-size: 20px; font-weight: bold">Router Architecture</text>
+  
+  <!-- Main Router -->
+  <rect x="250" y="80" width="300" height="440" rx="6" class="box" style="fill: #f7fafc"/>
+  <text x="400" y="110" text-anchor="middle" class="text" style="font-weight: bold">Axum Router</text>
+  
+  <!-- Static Routes Module -->
+  <rect x="270" y="140" width="260" height="80" rx="4" class="module"/>
+  <text x="400" y="170" text-anchor="middle" class="text">Static Routes</text>
+  <text x="400" y="190" text-anchor="middle" class="module-text">routes_static::serve_dir()</text>
+  
+  <!-- Auth Routes Module -->
+  <rect x="270" y="240" width="260" height="80" rx="4" class="module"/>
+  <text x="400" y="270" text-anchor="middle" class="text">Authentication Routes</text>
+  <text x="400" y="290" text-anchor="middle" class="module-text">handlers_login::{login, register}</text>
+  
+  <!-- RPC Router Module -->
+  <rect x="270" y="340" width="260" height="80" rx="4" class="module"/>
+  <text x="400" y="370" text-anchor="middle" class="text">RPC Router</text>
+  <text x="400" y="390" text-anchor="middle" class="module-text">handlers_rpc::rpc_axum_handler</text>
+  
+  <!-- Middleware Layer -->
+  <rect x="120" y="80" width="100" height="440" rx="6" class="box" style="fill: #ebf8ff"/>
+  <text x="170" y="110" text-anchor="middle" class="text" style="font-weight: bold">Middleware</text>
+  
+  <!-- Middleware Components -->
+  <rect x="130" y="140" width="80" height="60" rx="4" class="module"/>
+  <text x="170" y="170" text-anchor="middle" class="small-text">Auth</text>
+  
+  <rect x="130" y="220" width="80" height="60" rx="4" class="module"/>
+  <text x="170" y="250" text-anchor="middle" class="small-text">Request Stamp</text>
+  
+  <rect x="130" y="300" width="80" height="60" rx="4" class="module"/>
+  <text x="170" y="330" text-anchor="middle" class="small-text">Response Map</text>
+  
+  <!-- Client -->
+  <rect x="20" y="270" width="70" height="60" rx="4" class="box"/>
+  <text x="55" y="305" text-anchor="middle" class="text">Client</text>
+  
+  <!-- Flow Arrows -->
+  <line x1="90" y1="300" x2="110" y2="300" class="arrow"/>
+  <line x1="230" y1="300" x2="240" y2="300" class="arrow"/>
+  
+  <!-- Handlers -->
+  <rect x="580" y="80" width="100" height="440" rx="6" class="box" style="fill: #f0fff4"/>
+  <text x="630" y="110" text-anchor="middle" class="text" style="font-weight: bold">Handlers</text>
+  
+  <!-- Handler Components -->
+  <rect x="590" y="140" width="80" height="60" rx="4" class="module"/>
+  <text x="630" y="170" text-anchor="middle" class="small-text">Static Files</text>
+  
+  <rect x="590" y="220" width="80" height="60" rx="4" class="module"/>
+  <text x="630" y="250" text-anchor="middle" class="small-text">Auth Logic</text>
+  
+  <rect x="590" y="300" width="80" height="60" rx="4" class="module"/>
+  <text x="630" y="330" text-anchor="middle" class="small-text">RPC Methods</text>
+  
+  <!-- Route to Handler Arrows -->
+  <line x1="530" y1="180" x2="580" y2="180" class="arrow"/>
+  <line x1="530" y1="280" x2="580" y2="280" class="arrow"/>
+  <line x1="530" y1="380" x2="580" y2="380" class="arrow"/>
+</svg>
